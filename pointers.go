@@ -7,8 +7,10 @@ type Car struct {
 }
 
 func main() {
-	t_pointer()
-	t_pointer_syntacticSugar()
+	// t_pointer()
+	// t_pointer_syntacticSugar()
+	c1 := Car{speed: 250}
+	t_point_struct(&c1)
 }
 
 func t_pointer() {
@@ -38,4 +40,8 @@ func t_pointer_syntacticSugar() {
 	c1.speed = 123
 	fmt.Printf("%v\n", c1.speed)
 
+}
+
+func t_point_struct(x *Car) {
+	fmt.Println((*x).speed)
 }
